@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Aula v0.1</title>
+		<link rel="stylesheet" href="css/aula.css"/>
+		<script type="text/javascript">
+			window.aulaApp = {};
+		</script>
+	</head>
+	<body>
+		<div id="aulaApp">
+			<h1 class="headder">Aula v0.1</h1>
+			<div class="menu">
+				<button id="reservationButton">Reservar aula</button>
+				<button id="showReservationsButton">Mostrar clases</button>
+			</div>
+			<div class="mainContent">
+				<div id="reservationForm">
+					Nombre clase: <input type="text" id="classReservationNameInput" placeholder="" /><br>
+					Día: <input type="text" id="classReservationDayInput" placeholder="0-4" /><br>
+					Hora inicio: <input type="text" id="classReservationHourInput" placeholder="9-13 15-16" /><br>
+					<button id="classReservationOkButton">Reserva</button>
+					<button id="classReservationCancleButton">Cancelar</button>
+				</div>
+				<div id="reservedTimes">
+					Clases reservadas:
+					<div id="reservedTimesList">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="vendor/jquery.js"></script>
+		<script src="vendor/underscore.js"></script>
+		<script src="vendor/backbone.js"></script>
+		<script src="vendor/backbone.localStorage.js"></script>
+		<script src="scripts/clas.js"></script>
+		<script src="scripts/aula.js"></script>
+		<script src="scripts/clasView.js"></script>
+		<script src="scripts/aulaView.js"></script>
+
+		<script type="text/template" id="clasTemplate">
+			<div class="clasCotnainer">
+				<%= ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes'][day] %>
+				a las <%= hour %> - <strong><%= name %></strong>: 
+				<span class="newStudent">Nuevo alumno</span><br>
+				<div class="addStudentContainer">
+					<input type="text" class="studentName"/>
+					<button class="addStudent">Añadir alumno</button>
+					<button class="cancelAddStudent">Cancelar</button>
+				</div>
+				<div class="studentListContainer">
+					<% if(students.length) { %>
+						Alumnos: <span class="studentList"> <%= students.join(', ') %></span>
+					<% } %>
+				</div>
+			<div>
+		</script>
+	</body>
+</html>

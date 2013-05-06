@@ -1,0 +1,34 @@
+body {
+	font-family: Helvetica,​Arial,​Tahoma,​Verdana
+}
+
+#reservationForm, .addStudentContainer {
+	display: none;
+}
+
+.studentListContainer {
+	font-size: 10px;
+}
+
+.studentList {
+	color: gray;
+}
+
+.clasCotnainer {
+	font-size: 12px;
+	margin: 10px;
+}
+
+.newStudent {
+	font-size: 10px;
+	cursor: pointer;
+	color: darkblue;
+}
+
+.newStudent:hover {
+	text-decoration: underline;
+}
+
+.mainContent {
+	margin-top: 10px;
+}
